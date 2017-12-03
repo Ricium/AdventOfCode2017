@@ -1,4 +1,4 @@
-from methods import *
+from Common import *
 
 # Get the Captcha
 captcha = input('Enter the captcha: ')
