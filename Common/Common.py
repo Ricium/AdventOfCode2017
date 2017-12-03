@@ -24,28 +24,36 @@ def getStepIndex(index, step, max):
         next = (next - max) - 1
     return next
 
-# summary: Get the Captcha result for Day 1 Part 1
-# returns: Result of Captcha
-def checkCaptcha(captcha):
-    # get length
-    length = len(captcha)    
-    # make circular
-    circCaptcha = captcha + captcha[0]    
-    # initialize sum
-    sum = 0
-    # loop and sum
-    for x in range(0, length):
-        sum = sum + compare(circCaptcha[x], circCaptcha[x+1])
-    return sum
+# summary: Gets the min and max values in an array of values
+# returns: min - Smallest value
+#          max - Greatest value
+def getMinMax(row):
+    min = 99999999999
+    max = -9999999999
+    for cell in row:
+        if cell > max:
+            max = cell
 
-# summary: Get the Captcha result for Day 1 Part 2
-# returns: Result of Capctha
-def checkCaptchaJump(captcha):
-    length = len(captcha)
-    step = getMedian(captcha)    
-    # initialize sum
-    sum = 0
-    # loop and sum
-    for x in range(0, length):
-        sum = sum + compare(captcha[x], captcha[getStepIndex(x, step, length-1)])    
-    return sum
+        if cell < min:
+            min = cell
+
+    return min, max
+
+def getModuloPairs(row):
+    a = -1
+    b = -1
+    for x in row:
+        for y in row:
+            if x % y == 0 and x != y:
+                a = x  
+                b = y
+    
+    if a == -1 or b == -1:
+        for x in row:
+            for y in row:
+                if y % x == 0 and x != y:
+                    b = x  
+                    a = y
+
+    return a, b
+    

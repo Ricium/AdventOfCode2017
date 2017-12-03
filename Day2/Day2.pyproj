@@ -2,15 +2,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>aca47f88-8d20-4ff9-a33b-f92823acf061</ProjectGuid>
+    <ProjectGuid>dc43f9b1-a0f4-487b-b681-2374dfe51672</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Common.py</StartupFile>
-    <SearchPath>
-    </SearchPath>
+    <StartupFile>Day2.py</StartupFile>
+    <SearchPath>..\Common</SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
-    <Name>Common</Name>
-    <RootNamespace>Common</RootNamespace>
+    <Name>Day2</Name>
+    <RootNamespace>Day2</RootNamespace>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -21,10 +20,10 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Common.py" />
-    <Compile Include="Reading.py">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Day2.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="input.tsv" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
