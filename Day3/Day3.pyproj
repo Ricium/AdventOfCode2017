@@ -5,8 +5,7 @@
     <ProjectGuid>8ff98cf3-9874-4b2c-822c-3c32d8d6621d</ProjectGuid>
     <ProjectHome>.</ProjectHome>
     <StartupFile>Day3.py</StartupFile>
-    <SearchPath>
-    </SearchPath>
+    <SearchPath>..\Common</SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
     <Name>Day3</Name>

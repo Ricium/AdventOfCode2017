@@ -57,3 +57,29 @@ def getModuloPairs(row):
 
     return a, b
     
+def diagonalMax(layer, y):
+    val = 1;
+    for x in range(1, layer):
+        val = val + (8 * x) - y;
+    return val
+    
+def layerSeed(seed):
+    return seed + 2
+
+def getLayer(val):
+    temp = 0
+    count = 0
+
+    seed = 1
+    while temp < val:
+        count = count + 1
+        temp = seed * seed
+        seed = layerSeed(seed)
+
+    return count
+        
+def isEven(val):
+    if val % 2 == 0:
+        return True
+    else:
+        return False
