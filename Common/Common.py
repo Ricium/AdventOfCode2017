@@ -83,3 +83,57 @@ def isEven(val):
         return True
     else:
         return False
+
+def getWordsInString(str):
+    return str.split(' ')
+
+def getUniqueWords(words):
+    unique = list(set(words))
+    return unique
+
+def getCount(unique, word):
+    count = 0
+    for letter in word:
+       if letter == unique:
+           count = count + 1
+    return count 
+
+def isAnagram(a, b):
+    if len(a) == len(b):
+        letters_a = list(a)
+        letters_b = list(b)
+
+        unique_a = getUniqueWords(letters_a)
+        unique_b = getUniqueWords(letters_b)
+
+        if len(unique_a) == len(unique_b):
+            if unique_a.sort() == unique_b.sort():
+                isSame = True
+                for letter in unique_a:
+                    count_a = getCount(letter, a)
+                    count_b = getCount(letter, b)
+                    if count_a != count_b:
+                        isSame = False
+                        break
+                return isSame
+            else:
+                return False
+        else:
+            return False
+    else:
+        return False
+
+def checkPhrase(phrase, words):
+    if len(phrase) == len(words):
+        return True
+    else:
+        return False;
+
+def checkPhraseForAnagram(index, word, phrase):
+    foundAnagram = False
+    for x in range(0, len(phrase)):
+        if x != index:            
+            foundAnagram = isAnagram(word, phrase[x])
+            if foundAnagram:
+                break
+    return foundAnagram

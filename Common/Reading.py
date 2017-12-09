@@ -18,3 +18,8 @@ def ReadTabDelimitedFile(filename, hasHeadings):
             values.append(row_val)
     return values
 
+def ReadTextFile(filename):
+    with open(filename) as f:
+        content = f.readlines()
+    content = [x.strip() for x in content] 
+    return content
